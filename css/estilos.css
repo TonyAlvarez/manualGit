@@ -19,6 +19,14 @@ header {
 }
 
 
+.nav-logo {max-width: 1024px;padding:15px 0;margin: 0 auto;position:relative;}
+.logo {width:60%;display: inline;}
+.logo > img {height:100px;}
+.social {display:inline;right:15px;position:absolute;bottom:15px;}
+.social > img {width:50px;}
+
+.separar {border-top: 4px solid #1e4d2b;}
+
 header #menu {
     max-width: 1024px;
     list-style:none;
@@ -102,6 +110,8 @@ footer {
 @media all and (max-width: 640px) {
 
     #menu {display:none;}
+    .logo {display:block;}
+    .social {display:none !important;}
 
     header #menu li {
         display: block;
