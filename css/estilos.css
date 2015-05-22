@@ -15,7 +15,8 @@ html, body {
 header {
     display: block;
     padding: 0;
-    background: #4C9141;
+    background: #FFF;
+    box-shadow: 0 0 5px #000;
 }
 
 
@@ -23,9 +24,9 @@ header {
 .logo {width:60%;display: inline;}
 .logo > img {height:100px;}
 .social {display:inline;right:15px;position:absolute;bottom:15px;}
-.social > img {width:50px;}
+.social > img {width:120px;}
 
-.separar {border-top: 4px solid #1e4d2b;}
+.separar {border-top: 4px solid #999d9c;}
 
 header #menu {
     max-width: 1024px;
@@ -45,7 +46,7 @@ header #menu li {
 
 header #menu li a {
     text-decoration:none;
-    color: #1d3a1d;
+    color: #000;
     font-weight:bold;
     padding: 20px;
     box-sizing: border-box;
@@ -55,7 +56,7 @@ header #menu li a {
 }
 
 header #menu li a:hover, .selected {
-    background-color:#74C365
+    background-color:#FF8243;
 }
 
 .menu-button {
@@ -77,13 +78,13 @@ header #menu li a:hover, .selected {
 
 #main {
     max-width: 1024px;
-    margin: 0 auto;
-    padding: 5px;
+    margin: 15px auto;
+    padding: 0;
 }
 
 .container {
-    padding: 5px;
-    background: #dddd88;
+    padding: 15px;
+    background: rgba(210,210,210,0.5);
 }
 
 /***************************************************************************************************************/
@@ -96,11 +97,16 @@ footer {
     width:100%;
     display: block;
     padding: 5px;
-    background: #4C9141;
+    background: #FFF;
     height: 30px;
     line-height: 30px;
     text-align: center;
     color: #000000;
+    box-shadow: 0 0 5px #000;
+}
+
+#home footer {
+    position: fixed;
 }
 
 
