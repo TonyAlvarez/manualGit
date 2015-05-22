@@ -1,0 +1,121 @@
+html, body {
+    margin:0;
+    padding:0;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+
+/***************************************************************************************************************/
+/************************************************** HEADER *****************************************************/
+/***************************************************************************************************************/
+
+
+header {
+    display: block;
+    padding: 0;
+    background: #4C9141;
+}
+
+
+header #menu {
+    max-width: 1024px;
+    list-style:none;
+    padding:0;
+    margin:0 auto;
+    text-align:center;
+    font-size: 0;
+}
+
+header #menu li {
+    font-size: 18px;
+    display:inline;
+    margin: 0;
+    padding: 0;
+}
+
+header #menu li a {
+    text-decoration:none;
+    color: #1d3a1d;
+    font-weight:bold;
+    padding: 20px;
+    box-sizing: border-box;
+    display:inline-block;
+    width: 20%;
+    margin: 0;
+}
+
+header #menu li a:hover, .selected {
+    background-color:#74C365
+}
+
+.menu-button {
+    display: none;
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    margin: 10px 0 0 10px;
+    box-sizing: border-box;
+    background: url("../img/menu_icon.svg");
+    background-size: contain;
+}
+
+/***************************************************************************************************************/
+/************************************************** MAIN *****************************************************/
+/***************************************************************************************************************/
+
+
+
+#main {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 5px;
+}
+
+.container {
+    padding: 5px;
+    background: #dddd88;
+}
+
+/***************************************************************************************************************/
+/************************************************** FOOTER *****************************************************/
+/***************************************************************************************************************/
+
+footer {
+    position:relative;
+    bottom:0;
+    width:100%;
+    display: block;
+    padding: 5px;
+    background: #4C9141;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #000000;
+}
+
+
+/***************************************************************************************************************/
+/******************************************** PANTALLAS PEQUEÑAS ***********************************************/
+/***************************************************************************************************************/
+@media all and (max-width: 640px) {
+
+    #menu {display:none;}
+
+    header #menu li {
+        display: block;
+    }
+
+    header #menu li a, header #menu {
+        width: 100%;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    footer {
+        font-size: 13px;
+    }
+}

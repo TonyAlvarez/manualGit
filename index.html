@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Plantilla HTML5</title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <link href="css/estilos.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+
+    <script>
+        var contador = false;
+
+        function menu_desplegable(){
+            if (contador){
+                cerrar();
+            }else{
+                abrir();
+            }
+        }
+
+        function abrir(){
+            document.getElementById('menu').style.display="block";
+            contador = true;
+        }
+
+        function cerrar(){
+            document.getElementById('menu').style.display="none";
+            contador = false;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <span class="menu-button" onclick="menu_desplegable()"></span>
+        <ul id="menu">
+            <li><a class="selected" href="#">Home</a></li>
+            <li><a href="#">Proyectos</a></li>
+            <li><a href="#">Galería</a></li>
+            <li><a href="#">Ubicación</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </header>
+    <div id='main'>
+        <div class="container">Contenedor principal
+
+            Lorem fistrum de la pradera a peich te voy a borrar el cerito no te digo trigo por no llamarte Rodrigor te va a hasé pupitaa papaar papaar tiene musho peligro sexuarl benemeritaar llevame al sircoo. De la pradera está la cosa muy malar torpedo fistro al ataquerl quietooor se calle ustée. De la pradera papaar papaar benemeritaar está la cosa muy malar se calle ustée torpedo ese hombree a wan se calle ustée benemeritaar apetecan. Diodenoo la caidita se calle ustée está la cosa muy malar amatomaa por la gloria de mi madre condemor apetecan diodeno pupita. Diodenoo ese pedazo de jarl diodeno jarl amatomaa hasta luego Lucas me cago en tus muelas diodeno. Torpedo me cago en tus muelas caballo blanco caballo negroorl ahorarr.
+
+        </div>
+    </div>
+<footer>© Copyright 2015 - Diseñado por Toni Alvarez y Alex Ortiz</footer>
+</body>
+</html>
