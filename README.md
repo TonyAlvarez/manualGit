@@ -8,7 +8,7 @@ Este es un projecto base para crear un manual de Git.
 * Lo desarrollaréis por parejas.
 * Usando preferiblemente el workflow "Feature Branch Workflow" que estuvimos viendo:
 
-https://www.atlassian.com/git/tutorials/comparing-workflows/centralized-workflow
+https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow
 
 
 
