@@ -78,14 +78,16 @@ header #menu li a:hover, .selected {
 
 #main {
     max-width: 1024px;
-    margin: 15px auto;
+    margin: 50px auto;
     padding: 0;
 }
 
 .container {
-    padding: 15px;
+    padding: 15px 50px 50px 50px;
     background: rgba(210,210,210,0.5);
 }
+
+.container > h1 {text-align:center;padding-bottom:20px;}
 
 /***************************************************************************************************************/
 /************************************************** FOOTER *****************************************************/
