@@ -6,7 +6,9 @@ Este es un projecto base para crear un manual de Git.
 * Al acabar las explicaciones con vuestras palabras podéis incluir enlaces a fuentes externas que desarrollen más ampliamente los conceptos.
 * Podéis hacer un manual para el uso por consola o para el uso desde Eclipse.
 * Lo desarrollaréis por parejas.
-* Usando preferiblemente el workflow "Feature Branch Workflow" que estuvimos viendo.
+* Usando preferiblemente el workflow "Feature Branch Workflow" que estuvimos viendo:
+
+https://www.atlassian.com/git/tutorials/comparing-workflows/centralized-workflow
 
 
 
