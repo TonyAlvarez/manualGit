@@ -97,7 +97,7 @@
             <p>git init [<i>nombreRepositorio</i>] - Le podemos pasar cómo parámetro el nombre del repositorio</p>
         </div>
 
-        <h2 id="clone">Git Clone</h2>
+        <h2 id="clone">Git clone</h2>
         <div class="explicacion">
             <p>Clona un repositorio existente en el directorio actual.</p>
             <h4>Parámetros</h4>
@@ -106,21 +106,24 @@
 
         <h2 id="status">Git status</h2>
         <div class="explicacion">
-            <p>Lista todos los archivos nuevos o modificados.</p>
+            <p>Muestra el estado del proyecto local respecto al último commit (HEAD), si hay algún archivo nuevo o modificado lo lista.</p>
         </div>
 
         <h2 id="add">Git add</h2>
         <div class="explicacion">
-            <p>Añade la instantánea del archivo al área de preparación para el control de versiones.</p>
+            <p>Pone uno o varios archivos en seguimiento.</p>
             <h4>Parámetros</h4>
-            <p>git add [<i>archivo</i>] - Pasamos el archivo que deseamos añadir</p>
+            <p>git add [<i>archivo</i>] - Pasamos el archivo que deseamos seguir.</p>
         </div>
 
         <h2 id="reset">Git reset</h2>
         <div class="explicacion">
-            <p>Elimina el archivo del área de preparación, pero no elimina su contenido.</p>
+            <p>Elimina el seguimiento a uno o varios archivos, hace exactamente lo contrario que <i>Git add</i>.</p>
             <h4>Parámetros</h4>
-            <p>git reset [<i>archivo</i>] - Le pasamos el archivo que deseamos quitar del área de preparación</p>
+            <p>git reset [<i>archivo</i>] - Le pasamos el archivo al que le deseamos quitar el seguimiento.</p>
+            <h4>Parámetro [mode]</h4>
+            <p>Con el parámetro [mode] cambia por completo su proposito, el modo por defecto es <i>--mixed</i></p>
+            <p>git reset --hard [<i>commit</i>] - El modo <i>--hard</i> descarta todos los cambios de todos los archivos y vuelve al commit que le indiquemos.</p>
         </div>
 
         <!-- TODO HACER GIT REVERT -->
