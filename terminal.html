@@ -95,6 +95,10 @@
             <p>Crea un nuevo repositorio en el directorio actual.</p>
             <h4>Parámetros</h4>
             <p>git init [<i>nombreRepositorio</i>] - Le podemos pasar cómo parámetro el nombre del repositorio</p>
+
+            <div>
+                <img src="capturas/terminal_init.png" alt="Git Init" title="Git Init"/>
+            </div>
         </div>
 
         <h2 id="clone">Git clone</h2>
@@ -102,11 +106,26 @@
             <p>Clona un repositorio existente en el directorio actual.</p>
             <h4>Parámetros</h4>
             <p>git clone [<i>urlRepositorio</i>] - Le pasamos cómo parámetro la URL del repositorio que queremos clonar</p>
+
+
+            <div>
+                <img src="capturas/terminal_clone.png" alt="Git Clone" title="Git Clone"/>
+            </div>
         </div>
 
         <h2 id="status">Git status</h2>
         <div class="explicacion">
-            <p>Muestra el estado del proyecto local respecto al último commit (HEAD), si hay algún archivo nuevo o modificado lo lista.</p>
+            <p>Muestra el estado del proyecto local respecto al último commit (HEAD).</p>
+
+
+            <div>
+                <img src="capturas/terminal_status.png" alt="Git Status 1" title="Git Status 1"/>
+            </div>
+
+            <p>Si hay algún archivo nuevo o modificado lo lista.</p>
+            <div>
+                <img src="capturas/terminal_status2.png" alt="Git Status 2" title="Git Status 2"/>
+            </div>
         </div>
 
         <h2 id="add">Git add</h2>
@@ -136,6 +155,25 @@
             <p>git commit -m "[<i>mensajeDescriptivo</i>]" - Introducimos un mensaje que describa los cambios realizados en está última actualización</p>
         </div>
 
+        <h2 id="log">Git log</h2>
+        <div class="explicacion">
+            <p>Lista el historial de commits del repositorio mostrando el autor, la fecha y su descripción.</p>
+
+
+            <div>
+                <img src="capturas/terminal_log.png" alt="Git Log" title="Git Log"/>
+            </div>
+
+
+            <h4>Parámetros</h4>
+            <p>git log --follow [<i>archivo</i>] - Lista el historial de commits que afectan a un archivo en concreto, incluso aunque el archivo haya sido renombrado.</p>
+
+
+            <div>
+                <img src="capturas/terminal_log_follow.png" alt="Git Log Follow" title="Git Log Follow"/>
+            </div>
+        </div>
+
         <h2 id="branch">Git branch</h2>
         <div class="explicacion">
             <p>Lista todas las ramas locales que hay en el repositorio.</p>
@@ -148,22 +186,6 @@
             <p>Cambia la rama en la que te encuentra por la especificada y actualiza el directorio de trabajo.</p>
             <h4>Parámetros</h4>
             <p>git checkout [<i>nombreRama</i>]</p>
-        </div>
-
-        <!-- TODO EXPLICAR BIEN EL MERGE PARA NO HACER TRABAJO -->
-        <h2 id="merge">Git merge</h2>
-        <div class="explicacion">
-            <p>Combina la rama especificada con la rama corriente.</p>
-            <h4>Parámetros</h4>
-            <p>git merge [<i>nombreRama</i>]</p>
-        </div>
-
-        <!-- TODO EXPLICAR BIEN EL REBASE PARA NO HACER TRABAJO -->
-        <h2 id="rebase">Git rebase</h2>
-        <div class="explicacion">
-            <p>Cambia la rama en la que te encuentra por la especificada y actualiza el directorio de trabajo.</p>
-            <h4>Parámetros</h4>
-            <p>git rebase [<i>nombreRama</i>]</p>
         </div>
 
         <h2 id="fetch">Git fetch</h2>
@@ -187,12 +209,27 @@
             <p>git push [<i>nombreRama</i>]</p>
         </div>
 
-        <h2 id="log">Git log</h2>
+
+
+
+        <!-- TODO EXPLICAR BIEN EL MERGE PARA NO HACER TRABAJO -->
+        <h2 id="merge">Git merge</h2>
         <div class="explicacion">
-            <p>Lista las versiones del historial de una rama.</p>
+            <p>Combina la rama especificada con la rama corriente.</p>
             <h4>Parámetros</h4>
-            <p>git log -- follow [<i>archivo</i>] - Lista las versiones del historial de un archivo</p>
+            <p>git merge [<i>nombreRama</i>]</p>
         </div>
+
+        <!-- TODO EXPLICAR BIEN EL REBASE PARA NO HACER TRABAJO -->
+        <h2 id="rebase">Git rebase</h2>
+        <div class="explicacion">
+            <p>Cambia la rama en la que te encuentra por la especificada y actualiza el directorio de trabajo.</p>
+            <h4>Parámetros</h4>
+            <p>git rebase [<i>nombreRama</i>]</p>
+        </div>
+
+
+
         <div id="btn-container">
             <a href="#" class="btn-up">
                 <img src="img/up.png" alt="Inicio - Terminal" title="Inicio - Terminal">

@@ -131,6 +131,11 @@ footer {
     padding-bottom: 20px;
 }
 
+.explicacion > div {
+    text-align: center;
+    margin: 25px 0;
+}
+
 #btn-container {
     display: none;
 }
