@@ -62,13 +62,16 @@ header #menu li a:hover, .selected {
 
 .menu-button {
     display: none;
-    position: fixed;
+    position: absolute;
     width: 40px;
+    top: 70px;
     height: 40px;
+    right: 15px;
     margin: 10px 0 0 10px;
     box-sizing: border-box;
     background: url("../img/menu_icon.svg");
     background-size: contain;
+    z-index: 1000;
 }
 
 /***************************************************************************************************************/
@@ -114,16 +117,39 @@ footer {
 /************************************************* TERMINAL ****************************************************/
 /***************************************************************************************************************/
 
-#sub-menu {
-    list-style: circle;
-    margin-bottom: 50px;
+.menu-flotante {
+    position: fixed;
+    padding: 20px;
+    border-radius: 20px;
+    border: 2px solid gray;
+    width: auto;
+    margin: 50px 50px 0 100px;
 }
+
+#sub-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
 #sub-menu > li > a {
+    width: 150px;
+    padding: 10px 20px;
+    display: block;
     color: #000;
     text-decoration: none;
+    text-transform: capitalize;
+    border-radius: 5px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
 }
+
 #sub-menu > li > a:hover, #sub-menu > li > a:focus {
-    color: #000;
+    color: #fff;
+    background-color: #FF8243;
 }
 
 .explicacion {
@@ -150,7 +176,7 @@ footer {
 /***************************************************************************************************************/
 /******************************************** PANTALLAS PEQUEÑAS ***********************************************/
 /***************************************************************************************************************/
-@media all and (max-width: 640px) {
+@media all and (max-width: 1400px) {
 
     #menu {display:none;}
     .logo {display:block;}
@@ -164,8 +190,18 @@ footer {
         width: 100%;
     }
 
+    .menu-flotante {
+        position: relative;
+        margin-bottom: 50px;
+    }
+
     .menu-button {
         display: block;
+    }
+
+    .btn-up > img {
+        top: 50px;
+        right: 10px;
     }
 
     footer {
