@@ -84,8 +84,8 @@
         <li><a href="#branch">git branch</a></li>
         <li><a href="#checkout">git checkout</a></li>
         <li><a href="#fetch">git fetch</a></li>
-        <li><a href="#pull">git pull</a></li>
         <li><a href="#push">git push</a></li>
+        <li><a href="#pull">git pull</a></li>
         <li><a href="#merge">git merge</a></li>
         <li><a href="#rebase">git rebase</a></li>
     </ul>
@@ -158,9 +158,12 @@
 
         <h2 id="commit">Git commit</h2>
         <div class="explicacion">
-            <p>Introduce las instantáneas de los archivos del área de preparación en el historial del control de versiones.</p>
+            <p>Introduce las instantáneas de los archivos del área de preparación (staging) en el historial del control de versiones.</p>
             <h4>Parámetros</h4>
-            <p>git commit -m "[<i>mensajeDescriptivo</i>]" - Introducimos un mensaje que describa los cambios realizados en está última actualización</p>
+            <p>git commit -m "[<i>descripcion</i>]" - Introducimos un mensaje que describa los cambios realizados en está última actualización</p>
+            <div>
+                <img src="capturas/terminal_commit.png" alt="Git Commit" title="Git Commit"/>
+            </div>
         </div>
 
         <h2 id="log">Git log</h2>
@@ -200,18 +203,18 @@
             <p>git fetch [<i>marcador</i>]</p>
         </div>
 
-        <h2 id="pull">Git pull</h2>
-        <div class="explicacion">
-            <p>Descarga el historial del proyecto e incorpora los cambios.</p>
-            <h4>Parámetros</h4>
-            <p>git pull</p>
-        </div>
-
         <h2 id="push">Git push</h2>
         <div class="explicacion">
             <p>Envía los commits realizados en la rama al repositorio de GitHub.</p>
             <h4>Parámetros</h4>
             <p>git push [<i>nombreRama</i>]</p>
+        </div>
+
+        <h2 id="pull">Git pull</h2>
+        <div class="explicacion">
+            <p>Descargala última versión del proyecto desde el servidor remoto e incorpora los cambios al repositorio local.</p>
+            <h4>Parámetros</h4>
+            <p>git pull</p>
         </div>
 
 
