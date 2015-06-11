@@ -37,10 +37,15 @@
         $(window).scroll(function(){
             if ($(window).scrollTop() >= 300) {
                 document.getElementById('btn-container').style.display = "block";
-                document.getElementById('menu-flotante').style.top = "50px";
             } else {
                 document.getElementById('btn-container').style.display = "none";
-                document.getElementById('menu-flotante').style.top = "20%";
+            }
+
+            if ($(window).scrollTop() >= 160) {
+                document.getElementById('menu-flotante').style.top = "50px";
+            } else {
+                var posTop = $(window).scrollTop() - $('.container').offset().top
+                document.getElementById('menu-flotante').style.top = (posTop-posTop*2)-50+"px";
             }
         });
     </script>
@@ -75,18 +80,18 @@
         <li><a href="#reset">git reset</a></li>
         <li><a href="#revert">git revert</a></li>
         <li><a href="#commit">git commit</a></li>
+        <li><a href="#log">git log</a></li>
         <li><a href="#branch">git branch</a></li>
         <li><a href="#checkout">git checkout</a></li>
-        <li><a href="#merge">git merge</a></li>
-        <li><a href="#rebase">git rebase</a></li>
         <li><a href="#fetch">git fetch</a></li>
         <li><a href="#pull">git pull</a></li>
         <li><a href="#push">git push</a></li>
-        <li><a href="#log">git log</a></li>
+        <li><a href="#merge">git merge</a></li>
+        <li><a href="#rebase">git rebase</a></li>
     </ul>
 </div>
 <div id='main'>
-    <div class="container">
+    <div class="container" id="container">
         <h1 id="title">Terminal</h1>
         <p>
             Aquí veremos como usar las funciones básicas de Git desde la terminal.
@@ -162,15 +167,12 @@
         <div class="explicacion">
             <p>Lista el historial de commits del repositorio mostrando el autor, la fecha y su descripción.</p>
 
-
             <div>
                 <img src="capturas/terminal_log.png" alt="Git Log" title="Git Log"/>
             </div>
 
-
             <h4>Parámetros</h4>
             <p>git log --follow [<i>archivo</i>] - Lista el historial de commits que afectan a un archivo en concreto, incluso aunque el archivo haya sido renombrado.</p>
-
 
             <div>
                 <img src="capturas/terminal_log_follow.png" alt="Git Log Follow" title="Git Log Follow"/>
