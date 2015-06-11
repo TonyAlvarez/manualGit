@@ -187,32 +187,36 @@
             <p>Lista todas las ramas locales que hay en el repositorio.</p>
             <h4>Parámetros</h4>
             <p>git branch -m [<i>nombreRama</i>] - Crea una nueva rama</p>
+            <p>git branch -d [<i>nombreRama</i>] - Elimina una rama</p>
         </div>
 
         <h2 id="checkout">Git checkout</h2>
         <div class="explicacion">
-            <p>Cambia la rama en la que te encuentra por la especificada y actualiza el directorio de trabajo.</p>
+            <p>Actualiza el directorio de trabajo, actualizando los archivos locales con el archivo, el commit o la rama especificada.</p>
             <h4>Parámetros</h4>
-            <p>git checkout [<i>nombreRama</i>]</p>
+            <p>git checkout [<i>commit</i>] - Actualiza todos los archivos del directorio de trabajo al estado del commit especificado.</p>
+            <p>git checkout [<i>commit</i>] [<i>archivo</i>] - Actualiza el archivo especificado a la instantanea del commit especificado. Los cambios que no se hayan enviado serán perdidos.</p>
+            <p>git checkout [<i>nombreRama</i>] - Cambia el directorio de trabajo a la rama especificada.</p>
         </div>
 
         <h2 id="fetch">Git fetch</h2>
         <div class="explicacion">
-            <p>Descarga todo el historial desde el repositorio.</p>
+            <p>Descarga los últimos cambios desde el repositorio remoto, no incorpora lo cambios en los archivos locales.</p>
             <h4>Parámetros</h4>
-            <p>git fetch [<i>marcador</i>]</p>
+            <p>git fetch [<i>nombreRemoto</i>] - Se puede especificar el repositorio remoto desde donde se descargarán los cambios,
+                si no se especifica se descargan desde el repositorio por defecto que se haya configurado previamente.</p>
         </div>
 
         <h2 id="push">Git push</h2>
         <div class="explicacion">
-            <p>Envía los commits realizados en la rama al repositorio de GitHub.</p>
+            <p>Envía los commits pendientes al repositorio remoto.</p>
             <h4>Parámetros</h4>
-            <p>git push [<i>nombreRama</i>]</p>
+            <p>git push [<i>nombreRama</i>] - Envia los cambios de la rama especificada.</p>
         </div>
 
         <h2 id="pull">Git pull</h2>
         <div class="explicacion">
-            <p>Descargala última versión del proyecto desde el servidor remoto e incorpora los cambios al repositorio local.</p>
+            <p>Descarga la última versión del proyecto desde el repositorio remoto e incorpora los cambios al repositorio local.</p>
             <h4>Parámetros</h4>
             <p>git pull</p>
         </div>
