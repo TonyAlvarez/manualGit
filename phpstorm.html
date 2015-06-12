@@ -168,14 +168,26 @@
                 Para el reset, en la barra de herramientas <i>VCS/Git/Reseat HEAD...</i>.
             </p>
         </div>
-
-        <!-- TODO HACER GIT REVERT -->
+        
         <h2 id="revert">Git revert</h2>
         <div class="explicacion">
-            <p>Pone uno o varios archivos en seguimiento.</p>
+            <p>
+                Genera automáticamente un nuevo commit que deshace los cambios de un commit anterior, de esta forma se evita perder
+                esos cambios del historial. Se pierden los cambios realizados después del último commit.
+            </p>
             <h4>¿Cómo se hace?</h4>
 
-            <p>git add [<i>archivo</i>] - Pasamos el archivo que deseamos seguir.</p>
+            <ul>
+                <li>
+                    Una manera de hacer un revert sería en la parte derecha de la barra superior pulsando el icono de una flecha de color violeta.
+                </li>
+                <li>
+                    Otra manera sería en la barra de herramientas <i>VCS/Git/Revert</i>.
+                </li>
+            </ul>
+            <div>
+                <img src="capturas/phpstorm_pushandpull.png" alt="Git Revert" alt="Git Revert"/>
+            </div>
         </div>
 
         <h2 id="commit">Git commit</h2>
@@ -185,11 +197,18 @@
                 de versiones.</p>
             <h4>¿Cómo se hace?</h4>
 
-            <p>git commit -m "[<i>descripcion</i>]" - Introducimos un mensaje que describa los cambios realizados en
-                está última actualización</p>
+            <ul>
+                <li>
+                    Una manera sería seleccionar con el botón secundario del ratón el archivo en el explorador del proyecto y seleccionamos la opción <i>Git/Commit File...</i>
+                </li>
+                <li>
+                    Otra manera sería seleccionar en la derecha de la barra superior seleccionar el icono con la flecha verde, el primer procedimiento será crear el commit y posteriormente nos permitirá
+                    realizar un push.
+                </li>
+            </ul>
 
             <div>
-                <img src="capturas/terminal_commit.png" alt="Git Commit" title="Git Commit"/>
+                <img src="capturas/phpstorm_pushandpull.png" alt="Git Commit" title="Git Commit"/>
             </div>
         </div>
 
@@ -217,10 +236,19 @@
         <div class="explicacion">
             <p>Lista todas las ramas locales que hay en el repositorio.</p>
             <h4>¿Cómo se hace?</h4>
-
-            <p>git branch -m [<i>nombreRama</i>] - Crea una nueva rama</p>
-
-            <p>git branch -d [<i>nombreRama</i>] - Elimina una rama</p>
+            <p>
+                En la parte inferior a la izquierda aparece la opción Git:[ramaActual], si no tenemos creada ninguna aparecerá Git: Master.
+                Clicamos encima de eso y seleccionamos la opción <i>New Branch</i>.
+            </p>
+            <div>
+                <img src="capturas/phpstorm_checkout.png" alt="Git Branch" title="Git Branch" />
+            </div>
+            <p>
+                Aparecerá una ventana en la que debemos introducir el nombre que deseamos que tenga la nueva rama, y una vez creada ya nos desplaza a esa rama.
+            </p>
+            <div>
+                <img src="capturas/phpstorm_branch.png" alt="Git Branch" title="Git Branch" />
+            </div>
         </div>
 
         <h2 id="checkout">Git checkout</h2>
@@ -230,16 +258,15 @@
                 especificada.</p>
             <h4>¿Cómo se hace?</h4>
 
-            <p>git checkout [<i>commit</i>] - Actualiza todos los archivos del directorio de trabajo al estado del
-                commit especificado.</p>
-
-            <p>git checkout [<i>commit</i>] [<i>archivo</i>] - Actualiza el archivo especificado a la instantanea del
-                commit especificado. Los cambios que no se hayan enviado serán perdidos.</p>
-
-            <p>git checkout [<i>nombreRama</i>] - Cambia el directorio de trabajo a la rama especificada.</p>
+            <p>
+                Para cambiar de rama, en la parte inferior a la izquierda, en el mismo lugar donde creamos las ramas, seleccionamos la opción <i>Git:[ramaActual]</i>.
+                Aparecerán todas las ramas creadas y tan solo debemos seleccionar a la que deseamos desplazarnos.
+            </p>
+            <div>
+                <img src="capturas/phpstorm_checkout.png" alt="Git Checkout" title="Git Checkout" />
+            </div>
         </div>
 
-        <!-- TODO HECHO -->
         <h2 id="fetch">Git fetch</h2>
 
         <div class="explicacion">
@@ -253,7 +280,6 @@
         </div>
 
 
-        <!-- TODO HECHO -->
         <h2 id="push">Git push</h2>
 
         <div class="explicacion">
@@ -277,7 +303,6 @@
             </div>
         </div>
 
-        <!-- TODO HECHO -->
         <h2 id="pull">Git pull</h2>
         <div class="explicacion">
             <p>Descarga la última versión del proyecto desde el repositorio remoto e incorpora los cambios al
@@ -290,8 +315,6 @@
             </div>
         </div>
 
-
-        <!-- TODO EXPLICAR BIEN EL MERGE PARA NO HACER TRABAJO -->
         <h2 id="merge">Git merge</h2>
 
         <div class="explicacion">
