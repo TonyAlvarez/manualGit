@@ -30,6 +30,25 @@
             contador = false;
         }
     </script>
+
+    <!-- || Muestra el boton de subir pasados 300px -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+        $(window).scroll(function () {
+            if ($(window).scrollTop() >= 300) {
+                document.getElementById('btn-container').style.display = "block";
+            } else {
+                document.getElementById('btn-container').style.display = "none";
+            }
+
+            if ($(window).scrollTop() >= 160) {
+                document.getElementById('menu-flotante').style.top = "50px";
+            } else {
+                var posTop = $(window).scrollTop() - $('.container').offset().top
+                document.getElementById('menu-flotante').style.top = (posTop - posTop * 2) - 50 + "px";
+            }
+        });
+    </script>
 </head>
 <body id="home">
 <header>
@@ -48,45 +67,279 @@
     <ul id="menu">
         <li><a href="index.html">Home</a></li>
         <li><a href="terminal.html">Terminal</a></li>
+        <li><a href="eclipse.html">Eclipse</a></li>
         <li><a class="selected" href="#">PhpStorm</a></li>
     </ul>
 </header>
+<div class="menu-flotante" id="menu-flotante">
+    <ul id="sub-menu">
+        <li><a href="#init">git init</a></li>
+        <li><a href="#clone">git clone</a></li>
+        <li><a href="#add">git add</a></li>
+        <li><a href="#reset">git reset</a></li>
+        <li><a href="#revert">git revert</a></li>
+        <li><a href="#commit">git commit</a></li>
+        <li><a href="#log">git log</a></li>
+        <li><a href="#branch">git branch</a></li>
+        <li><a href="#checkout">git checkout</a></li>
+        <li><a href="#fetch">git fetch</a></li>
+        <li><a href="#push">git push</a></li>
+        <li><a href="#pull">git pull</a></li>
+        <li><a href="#merge">git merge</a></li>
+        <li><a href="#rebase">git rebase</a></li>
+    </ul>
+</div>
+
 <div id='main'>
-    <div class="container">
-        <h1>IDEs de JetBrains como PhpStorm o IntelliJ</h1>
-        <p>Aquí veremos como usar las funciones básicas de Git desde PhpStorm, IntelliJ o derivados.</p>
-        <p>Haz scroll hacía abajo o elige la instrucción en el menú flotante para saltar directamente a ella.</p>
-        <ul id="sub-menu">
-            <li><a href="#init">git init</a></li>
-            <li><a href="#clone">git clone</a></li>
-            <li><a href="#status">git status</a></li>
-            <li><a href="#add">git add</a></li>
-            <li><a href="#reset">git reset</a></li>
-            <li><a href="#revert">git revert</a></li>
-            <li><a href="#commit">git commit</a></li>
-            <li><a href="#branch">git branch</a></li>
-            <li><a href="#checkout">git checkout</a></li>
-            <li><a href="#merge">git merge</a></li>
-            <li><a href="#rebase">git rebase</a></li>
-            <li><a href="#fetch">git fetch</a></li>
-            <li><a href="#pull">git pull</a></li>
-            <li><a href="#push">git push</a></li>
-            <li><a href="#log">git log</a></li>
-        </ul>
-        <h2 id="clone">Git Clone</h2>
-        <h2 id="status">Git status</h2>
+    <div class="container" id="container">
+        <h1>PhpStorm, IntelliJ y derivados</h1>
+
+        <p>
+            Aquí veremos como usar las funciones básicas de Git desde PhpStorm, IntelliJ o derivados.
+            Haz scroll hacía abajo o elige la instrucción en la lista para saltar directamente a ella.
+        </p>
+
+        <h2 id="init">Git init</h2>
+        <div class="explicacion">
+            <p>Crea un nuevo repositorio en el directorio actual.</p>
+            <h4>¿Cómo se hace?</h4>
+            <p>Una vez que tenemos creado el proyecto en PhpStorm, IntelliJ o derivados.</p>
+            <h4>GitHub</h4>
+            En la barra de herramientas seleccionamos <i>VCS/Import into Version Control/Share project on GitHub</i>.
+            <div>
+                <img src="capturas/phpstorm_initGitHub.png" alt="Git Init"  title="Git Init" />
+            </div>
+            <h4>Git</h4>
+            En la barra de herramientas seleccionamos <i>VCS/Import into Version Control/Create Git Repository...</i>,
+            nos aparecerá una ventana en la que debemos seleccionar el proyecto en el cual queremos crear el repositorio.
+            <div>
+                <img src="capturas/phpstorm_initGit.png" alt="Git Init"  title="Git Init" />
+            </div>
+        </div>
+
+        <h2 id="clone">Git clone</h2>
+        <div class="explicacion">
+            <p>Clona un repositorio existente en el directorio actual.</p>
+            <h4>¿Cómo se hace?</h4>
+
+            <p>
+                Una vez que abrimos el PhpStorm sin ningún proyecto abierto seleccionamos la opción <i>Check out from Version control</i>
+            </p>
+            <div>
+                <img src="capturas/phpstorm_clone.png" alt="Git Clone" title="Git Clone" />
+            </div>
+            <p>
+                Nos aparece una ventana en la que debemos seleccionar el repository GitHub que tenemos compartidos o creados en nuestra cuenta.
+                Una vez seleccionado indicamos la ruta donde queremos crear el proyecto y seleccionamos Clone.
+            </p>
+            <div>
+                <img src="capturas/phpstorm_clone2.png" alt="Git Clone" title="Git Clone" />
+            </div>
+        </div>
+
         <h2 id="add">Git add</h2>
+
+        <div class="explicacion">
+            <p>Pone uno o varios archivos en seguimiento.</p>
+            <h4>¿Cómo se hace?</h4>
+
+            <p>
+                Para añadir un archivo, en el explorador del proyecto seleccionamos el archivo con le botón secundario del ratón y seleccionamos
+                <i>Git/Add</i>.
+            </p>
+            <p>Para saber que el Add funciona:</p>
+            <h4>Antes</h4>
+            <div>
+                <img src="capturas/phpstorm_add.png" alt="Git Add" title="Git Add" />
+            </div>
+            <h4>Después</h4>
+            <div>
+                <img src="capturas/phpstorm_add2.png" alt="Git Add" title="Git Add" />
+            </div>
+        </div>
+
         <h2 id="reset">Git reset</h2>
+
+        <div class="explicacion">
+            <p>Elimina el seguimiento a uno o varios archivos, hace exactamente lo contrario que <i>Git add</i>.</p>
+            <h4>¿Cómo se hace?</h4>
+
+            <p>
+                Para el reset, en la barra de herramientas <i>VCS/Git/Reseat HEAD...</i>.
+            </p>
+        </div>
+        
         <h2 id="revert">Git revert</h2>
+        <div class="explicacion">
+            <p>
+                Genera automáticamente un nuevo commit que deshace los cambios de un commit anterior, de esta forma se evita perder
+                esos cambios del historial. Se pierden los cambios realizados después del último commit.
+            </p>
+            <h4>¿Cómo se hace?</h4>
+
+            <ul>
+                <li>
+                    Una manera de hacer un revert sería en la parte derecha de la barra superior pulsando el icono de una flecha de color violeta.
+                </li>
+                <li>
+                    Otra manera sería en la barra de herramientas <i>VCS/Git/Revert</i>.
+                </li>
+            </ul>
+            <div>
+                <img src="capturas/phpstorm_pushandpull.png" alt="Git Revert" alt="Git Revert"/>
+            </div>
+        </div>
+
         <h2 id="commit">Git commit</h2>
-        <h2 id="branch">Git branch</h2>
-        <h2 id="checkout">Git checkout</h2>
-        <h2 id="merge">Git merge</h2>
-        <h2 id="rebase">Git rebase</h2>
-        <h2 id="fetch">Git fetch</h2>
-        <h2 id="pull">Git pull</h2>
-        <h2 id="push">Git push</h2>
+
+        <div class="explicacion">
+            <p>Introduce las instantáneas de los archivos del área de preparación (staging) en el historial del control
+                de versiones.</p>
+            <h4>¿Cómo se hace?</h4>
+
+            <ul>
+                <li>
+                    Una manera sería seleccionar con el botón secundario del ratón el archivo en el explorador del proyecto y seleccionamos la opción <i>Git/Commit File...</i>
+                </li>
+                <li>
+                    Otra manera sería seleccionar en la derecha de la barra superior seleccionar el icono con la flecha verde, el primer procedimiento será crear el commit y posteriormente nos permitirá
+                    realizar un push.
+                </li>
+            </ul>
+
+            <div>
+                <img src="capturas/phpstorm_pushandpull.png" alt="Git Commit" title="Git Commit"/>
+            </div>
+        </div>
+
         <h2 id="log">Git log</h2>
+
+        <div class="explicacion">
+            <p>Lista el historial de commits del repositorio mostrando el autor, la fecha y su descripción.</p>
+
+            <h4>¿Cómo se hace?</h4>
+            <p>
+                Para ver el log del proyecto en la barra de herramientas seleccionamos <i>VCS/Git/Show History</i>.
+            </p>
+        </div>
+
+        <h2 id="branch">Git branch</h2>
+
+        <div class="explicacion">
+            <p>Lista todas las ramas locales que hay en el repositorio.</p>
+            <h4>¿Cómo se hace?</h4>
+            <p>
+                En la parte inferior a la izquierda aparece la opción Git:[ramaActual], si no tenemos creada ninguna aparecerá Git: Master.
+                Clicamos encima de eso y seleccionamos la opción <i>New Branch</i>.
+            </p>
+            <div>
+                <img src="capturas/phpstorm_checkout.png" alt="Git Branch" title="Git Branch" />
+            </div>
+            <p>
+                Aparecerá una ventana en la que debemos introducir el nombre que deseamos que tenga la nueva rama, y una vez creada ya nos desplaza a esa rama.
+            </p>
+            <div>
+                <img src="capturas/phpstorm_branch.png" alt="Git Branch" title="Git Branch" />
+            </div>
+        </div>
+
+        <h2 id="checkout">Git checkout</h2>
+
+        <div class="explicacion">
+            <p>Actualiza el directorio de trabajo, actualizando los archivos locales con el archivo, el commit o la rama
+                especificada.</p>
+            <h4>¿Cómo se hace?</h4>
+
+            <p>
+                Para cambiar de rama, en la parte inferior a la izquierda, en el mismo lugar donde creamos las ramas, seleccionamos la opción <i>Git:[ramaActual]</i>.
+                Aparecerán todas las ramas creadas y tan solo debemos seleccionar a la que deseamos desplazarnos.
+            </p>
+            <div>
+                <img src="capturas/phpstorm_checkout.png" alt="Git Checkout" title="Git Checkout" />
+            </div>
+        </div>
+
+        <h2 id="fetch">Git fetch</h2>
+
+        <div class="explicacion">
+            <p>Descarga los últimos cambios desde el repositorio remoto, no incorpora lo cambios en los archivos
+                locales.</p>
+            <h4>¿Cómo se hace?</h4>
+
+            <p>
+                Para realizar un <i>fetch</i> seleccionamos en la barra de herramientas la opción <i>VCS/Git/fetch.</i>
+            </p>
+        </div>
+
+
+        <h2 id="push">Git push</h2>
+
+        <div class="explicacion">
+            <p>Envía los commits pendientes al repositorio remoto.</p>
+            <h4>¿Cómo se hace?</h4>
+            Hay diferentes maneras de hacer un push:
+            <ol>
+                <li>
+                    Si deseamos hacer un commit y un push a la vez seleccionamos el icono con una fecha de color verde
+                    que aparece en la barra superior.
+                </li>
+                <li>
+                    Si tan soo deseamos realizar un Push para ello debemos desplazarnos a la barra de herramientas <i>VCS/Git/Push</i>.
+                </li>
+            </ol>
+            <div>
+                <img src="capturas/phpstorm_pushandpull.png" alt="Git Push" title="Git Push" />
+            </div>
+            <div>
+                <img src="capturas/phpstorm_push2.png" alt="Git Push" title="Git Push" />
+            </div>
+        </div>
+
+        <h2 id="pull">Git pull</h2>
+        <div class="explicacion">
+            <p>Descarga la última versión del proyecto desde el repositorio remoto e incorpora los cambios al
+                repositorio local.</p>
+            <h4>¿Cómo se hace?</h4>
+
+            <p>Seleccionamos el icono que contiene una flecha azul de la barra superior o bien vamos a la barra herramientas <i>VCS/Git/Pull</i></p>
+            <div>
+                <img src="capturas/phpstorm_pushandpull.png" alt="Git Push" title="Git Push" />
+            </div>
+        </div>
+
+        <h2 id="merge">Git merge</h2>
+
+        <div class="explicacion">
+            <p>Combina la rama especificada con la rama corriente.</p>
+            <h4>¿Cómo se hace?</h4>
+
+            <p>
+                Para realizar un merge, en la barra de herramientas en <i>VCS/Git/Merge Changes...</i>
+                O bien a la hora de hacer un pull nos pregunta si deseamos hacer un Merge.
+            </p>
+        </div>
+
+        <!-- TODO EXPLICAR BIEN EL REBASE PARA NO HACER TRABAJO -->
+        <h2 id="rebase">Git rebase</h2>
+
+        <div class="explicacion">
+            <p>Cambia la rama en la que te encuentra por la especificada y actualiza el directorio de trabajo.</p>
+            <h4>¿Cómo se hace?</h4>
+
+            <p>
+                Para realizar un rebase, en la barra de herramientas en <i>VCS/Git/Rebase</i>.
+            </p>
+            <div>
+                <img src="capturas/phpstorm_rebase.png" alt="Git Rebase" title="Git Rebase" />
+            </div>
+        </div>
+
+
+        <div id="btn-container">
+            <a href="#" class="btn-up">
+                <img src="img/up.png" alt="Inicio - Terminal" title="Inicio - Terminal">
+            </a>
+        </div>
     </div>
 </div>
 <footer>© Copyright 2015 - Diseñado por Toni Alvarez y Alex Ortiz</footer>
