@@ -13,11 +13,12 @@
         var contador = false;
 
         function menu_desplegable() {
-            if (contador) {
-                cerrar();
-            } else {
-                abrir();
-            }
+
+                if (contador) {
+                    cerrar();
+                } else {
+                    abrir();
+                }
         }
 
         function abrir() {
@@ -35,18 +36,24 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
         $(window).scroll(function(){
+
             if ($(window).scrollTop() >= 300) {
                 document.getElementById('btn-container').style.display = "block";
             } else {
                 document.getElementById('btn-container').style.display = "none";
             }
 
-            if ($(window).scrollTop() >= 160) {
-                document.getElementById('menu-flotante').style.top = "50px";
+            if (document.body.clientWidth >= 1400) {
+                if ($(window).scrollTop() >= 160) {
+                    document.getElementById('menu-flotante').style.top = "50px";
+                } else {
+                    var posTop = $(window).scrollTop() - $('.container').offset().top
+                    document.getElementById('menu-flotante').style.top = (posTop-posTop*2)-50+"px";
+                }
             } else {
-                var posTop = $(window).scrollTop() - $('.container').offset().top
-                document.getElementById('menu-flotante').style.top = (posTop-posTop*2)-50+"px";
+                document.getElementById('menu-flotante').style.top = "0px";
             }
+
         });
     </script>
 </head>
@@ -155,7 +162,7 @@
         <div class="explicacion">
             <p>Genera automáticamente un nuevo commit que deshace los cambios de un commit anterior,  de esta forma se evita perder esos cambios del historial.</p>
             <h4>Parámetros</h4>
-            <p>git revert [<i>commit</i>] - Pasamos coo parametro el commit del cual queremos deshacer los cambios</p>
+            <p>git revert [<i>commit</i>] - Pasamos como parámetro el commit del cual queremos deshacer los cambios</p>
         </div>
 
         <h2 id="commit">Git commit</h2>
