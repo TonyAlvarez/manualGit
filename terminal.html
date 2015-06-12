@@ -13,7 +13,6 @@
         var contador = false;
 
         function menu_desplegable() {
-
                 if (contador) {
                     cerrar();
                 } else {
@@ -56,6 +55,27 @@
 
         });
     </script>
+
+
+    <script>
+        $(function(){
+            $('a[href*=#]').click(function() {
+                if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+                        && location.hostname == this.hostname) {
+
+                    var $target = $(this.hash);
+
+                    $target = $target.length && $target || $('[name=' + this.hash.slice(1) +']');
+
+                    if ($target.length) {
+                        var targetOffset = $target.offset().top;
+                        $('html,body').animate({scrollTop: targetOffset}, 1000);
+                        return false;
+                    }
+                }
+            });
+        });
+    </script>
 </head>
 <body id="home">
 <header>
@@ -74,7 +94,6 @@
     <ul id="menu">
         <li><a href="index.html">Home</a></li>
         <li><a class="selected" href="#">Terminal</a></li>
-        <li><a href="eclipse.html">Eclipse</a></li>
         <li><a href="phpstorm.html">PhpStorm</a></li>
     </ul>
 </header>
@@ -100,10 +119,8 @@
 <div id='main'>
     <div class="container" id="container">
         <h1 id="title">Terminal</h1>
-        <p>
-            Aquí veremos como usar las funciones básicas de Git desde la terminal.
-            Haz scroll hacía abajo o elige la instrucción en el menú flotante para saltar directamente a ella.
-        </p>
+        <p>Aquí veremos como usar las funciones básicas de Git desde la terminal.</p>
+        <p>Haz scroll hacía abajo o elige la instrucción en el menú flotante para saltar directamente a ella.</p>
         <h2 id="init">Git init</h2>
         <div class="explicacion">
             <p>Crea un nuevo repositorio en el directorio actual.</p>
