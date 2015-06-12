@@ -95,7 +95,6 @@
         <h1 id="title">Terminal</h1>
         <p>
             Aquí veremos como usar las funciones básicas de Git desde la terminal.
-
             Haz scroll hacía abajo o elige la instrucción en la lista para saltar directamente a ella.
         </p>
         <h2 id="init">Git init</h2>
@@ -115,7 +114,6 @@
             <h4>Parámetros</h4>
             <p>git clone [<i>urlRepositorio</i>] - Le pasamos cómo parámetro la URL del repositorio que queremos clonar</p>
 
-
             <div>
                 <img src="capturas/terminal_clone.png" alt="Git Clone" title="Git Clone"/>
             </div>
@@ -124,7 +122,6 @@
         <h2 id="status">Git status</h2>
         <div class="explicacion">
             <p>Muestra el estado del proyecto local respecto al último commit (HEAD).</p>
-
 
             <div>
                 <img src="capturas/terminal_status.png" alt="Git Status 1" title="Git Status 1"/>
@@ -153,8 +150,13 @@
             <p>git reset --hard [<i>commit</i>] - El modo <i>--hard</i> descarta todos los cambios de todos los archivos y vuelve al commit que le indiquemos.</p>
         </div>
 
-        <!-- TODO HACER GIT REVERT -->
+
         <h2 id="revert">Git revert</h2>
+        <div class="explicacion">
+            <p>Genera automáticamente un nuevo commit que deshace los cambios de un commit anterior,  de esta forma se evita perder esos cambios del historial.</p>
+            <h4>Parámetros</h4>
+            <p>git revert [<i>commit</i>] - Pasamos coo parametro el commit del cual queremos deshacer los cambios</p>
+        </div>
 
         <h2 id="commit">Git commit</h2>
         <div class="explicacion">
@@ -220,26 +222,51 @@
             <h4>Parámetros</h4>
             <p>git pull [<i>nombreRemoto</i>] - Se puede especificar el repositorio remoto desde donde se descargarán los cambios,
                 si no se especifica se descargan desde el repositorio por defecto que se haya configurado previamente.</p>
+            <p>git pull [<i>--rebase</i>] - Se cambia el modo de combinar los cambios en los archivos locales a <i>rebase</i>, por defecto es <i>merge</i>.</p>
         </div>
 
 
-        <!-- TODO EXPLICAR BIEN EL MERGE PARA NO HACER TRABAJO -->
         <h2 id="merge">Git merge</h2>
         <div class="explicacion">
-            <p>Combina la rama especificada con la rama corriente.</p>
+            <p>Cambina los cambios de la rama especificada o de un repositorio remoto en el directorio de trabajo o en una otra rama.</p>
             <h4>Parámetros</h4>
-            <p>git merge [<i>nombreRama</i>]</p>
+            <p>git merge [<i>ramaPrincipal</i>] - Le pasamos la rama con la que queremos combinar la rama actual</p>
+            <p>git merge [<i>ramaPrincipal</i>] [<i>ramaACombinar</i>] - Le pasamos ambas ramas como parámetros, primero la rama principal y segundo la rama que queremos combinar en ella.</p>
+
+            <p>Git merge es una acción no destructiva, por lo que es más recomendable para usuarios noveles.
+                Como inconveniente, al usar merge en el historial de commits veremos los commits de las dsintintas ramas por separado,
+                y el commit en el que hacemos <i>merge</i> saldrá como un commit especial que une las dos lineas:
+                </p>
+
+            <div>
+                <img src="capturas/terminal_merge.png" alt="Git Merge" title="Git Merge"/>
+            </div>
+
+            <p>Esto puede hacer que en un proyecto con muchas ramas y muchos desarrolladores sea un más complicado leer el historial gráfico de commits:</p>
+
+            <div>
+                <img src="capturas/terminal_merge_2.png" alt="Git Merge 2" title="Git Merge 2"/>
+            </div>
         </div>
 
-        <!-- TODO EXPLICAR BIEN EL REBASE PARA NO HACER TRABAJO -->
         <h2 id="rebase">Git rebase</h2>
         <div class="explicacion">
-            <p>Cambia la rama en la que te encuentra por la especificada y actualiza el directorio de trabajo.</p>
+            <p>Cambina los cambios de la rama especificada o de un repositorio remoto en el directorio de trabajo o en una otra rama.</p>
             <h4>Parámetros</h4>
-            <p>git rebase [<i>nombreRama</i>]</p>
+            <p>git rebase [<i>nombreRama</i>] - La rama en la que queremos rebasar los cambios</p>
+
+            <p>Git rebase, como su nombre indica, rebasa la rama y todo su historial en la rama que le especifiquemos.
+                El primer commit de la rama se mostrará después del último commit de la rama en la que rebasemos,
+                de esta forma la historial gráfico de commits es mucho más sencillo de leer:
+            </p>
+
+            <div>
+                <img src="capturas/terminal_rebase.png" alt="Git Rebase" title="Git Rebase"/>
+            </div>
+
+            <p>El inconveniente de <i>rebase</i> es que puede ser un comando destructivo si lo usamos de forma inadecuada.
+                La regla que siempre hay que cumplir es no rebasar nunca la rama principal del proyecto en una rama secundaria.</p>
         </div>
-
-
 
         <div id="btn-container">
             <a href="#" class="btn-up">
